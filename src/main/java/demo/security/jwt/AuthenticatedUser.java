@@ -5,7 +5,12 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-
+/**
+ * Very basic implementation of {@code Authentication} interface to store the username. A real world example could also populate
+ * the credentials and some other fields using information derived from the JWT.
+ * @author schremar
+ *
+ */
 public class AuthenticatedUser implements Authentication {
 
     private String name;

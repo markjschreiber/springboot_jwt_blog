@@ -13,6 +13,10 @@ import java.io.IOException;
 
 public class JWTAuthenticationFilter extends GenericFilterBean{
 
+	/**
+	 * Filters a {@code request} and sets the {@code Authentication} in the {@code SecurityContextHolder} if the request contains a valid
+	 * JWT that identifies the user.
+	 */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         Authentication authentication = new TokenAuthenticationService().getAuthentication((HttpServletRequest)request);

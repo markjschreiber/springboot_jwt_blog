@@ -14,7 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+/**
+ * Filters authentication attempts from the configured endpoint (such as /login)
+ * @author schremar
+ *
+ */
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter{
 
     private TokenAuthenticationService tokenAuthenticationService;
@@ -34,6 +38,9 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter{
         return getAuthenticationManager().authenticate(token);
     }
 
+    /**
+     * On successful authentication the JWT token is inserted into the {@code response}.
+     */
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication)
             throws IOException, ServletException{
