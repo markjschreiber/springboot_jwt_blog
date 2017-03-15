@@ -8,4 +8,8 @@ _site
 .idea
 .bundle/
 
+
 target/
+.classpath
+.project
+.settings/
